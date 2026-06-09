@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Set a 'js' flag before render so scroll-reveal only hides content when JS is available -->
+  <script>document.documentElement.className = 'js';</script>
+  <title>HeaVit — AI Nutrition Coach Built for Indian Bodies</title>
+  <meta name="description" content="HeaVit is the AI nutrition coach calibrated for South Asian metabolism. Scan your plate, decode your bloodwork, and get a clinical-grade meal plan built around how India eats." />
+  <meta name="theme-color" content="#506600" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="HeaVit — AI Nutrition Coach Built for Indian Bodies" />
+  <meta property="og:description" content="Snap your plate, decode your bloodwork, and get a clinical-grade plan calibrated for South Asian metabolism." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ───────────────────────── NAV ───────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="brand" aria-label="HeaVit home">
+  <img src="heavit-logo.png" alt="HeaVit Logo" class="brand__logo">
+  <span class="brand__name">HeaVit</span>
+</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#ai">AI Tools</a>
+        <a href="#science">Science</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#waitlist" class="btn btn--primary btn--sm">Get early access</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a href="#features">Features</a>
+      <a href="#ai">AI Tools</a>
+      <a href="#science">Science</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#waitlist" class="btn btn--primary">Get early access</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+  <!-- ───────────────────────── HERO ───────────────────────── -->
+  <section class="hero">
+    <div class="hero__glow"></div>
+    <div class="container hero__inner">
+      <div class="hero__copy reveal">
+        <span class="eyebrow eyebrow--light">
+          <span class="dot"></span> AI Nutrition · South Asian Metabolic Engine
+        </span>
+        <h1 class="hero__title">
+          Nutrition intelligence,<br />built for <span class="hl">Indian bodies.</span>
+        </h1>
+        <p class="hero__sub">
+          Generic calorie apps use Western baselines. HeaVit is the AI nutrition coach
+          calibrated for South Asian metabolism — snap your plate, decode your bloodwork,
+          and get a clinical-grade plan that fits how India actually eats.
+        </p>
+        <div class="hero__cta">
+          <a href="#waitlist" class="btn btn--lime">Get early access →</a>
+          <a href="#how" class="btn btn--ghost-light">See how it works</a>
+        </div>
+      <div class="coming-soon">
+    <span>Coming Soon on</span>
+    <img src="images/app-store-badge.svg" alt="Apple App Store">
+    <img src="images/google-play.png" alt="Google Play">
+</div>
+        <div class="hero__proof">
+          <div><strong>400+</strong><span>Indian &amp; global foods</span></div>
+          <div><strong>5</strong><span>AI-powered tools</span></div>
+          <div><strong>24</strong><span>clinical nutrition rules</span></div>
+        </div>
+      </div>
+
+      <!-- App mockup -->
+      <div class="hero__art reveal">
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="appcard appcard--hero">
+              <div class="app-row app-row--head">
+                <span class="app-brand">HeaVit</span>
+                <span class="app-streak">🔥 12</span>
+              </div>
+              <p class="app-greet">Good morning, Aarav 👋</p>
+
+              <div class="app-score">
+                <svg viewBox="0 0 120 120" class="ring" aria-hidden="true">
+                  <circle class="ring__track" cx="60" cy="60" r="52"></circle>
+                  <circle class="ring__fill" cx="60" cy="60" r="52"
+                          stroke-dasharray="326.7" stroke-dashoffset="62"></circle>
+                </svg>
+                <div class="app-score__center">
+                  <span class="app-score__num">81</span>
+                  <span class="app-score__lbl">Health Score</span>
+                </div>
+              </div>
+
+              <div class="app-macros">
+                <div class="macro"><span>Protein</span><i style="--w:72%"></i></div>
+                <div class="macro"><span>Carbs</span><i style="--w:54%;--c:#3F6653"></i></div>
+                <div class="macro"><span>Fat</span><i style="--w:40%;--c:#2C694E"></i></div>
+              </div>
+            </div>
+
+            <div class="appcard appcard--ai">
+              <span class="ai-tag"><span class="dot dot--lime"></span> Personalised · HeaVit AI</span>
+              <p>You have <b>620 kcal</b> left. Try bajra roti with paneer bhurji —
+                quality carbs that hit your protein target. 💪</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating plate-score chip -->
+        <div class="floatcard floatcard--plate">
+          <div class="floatcard__score">82</div>
+          <div>
+            <strong>Plate scored</strong>
+            <span>Dal · Brown rice · Bhindi</span>
+          </div>
+        </div>
+        <!-- Floating biomarker chip -->
+        <div class="floatcard floatcard--bio">
+          <span class="bio-emoji">🩸</span>
+          <div>
+            <strong>HbA1c 5.8%</strong>
+            <span>Borderline — plan adjusted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── MARQUEE / STATS BAR ───────────────────────── -->
+  <section class="statsbar">
+    <div class="container statsbar__inner reveal">
+      <div class="stat"><strong>3–5×</strong><span>higher insulin-resistance risk in South Asians</span></div>
+      <div class="stat"><strong>90+</strong><span>countries' banned additives flagged</span></div>
+      <div class="stat"><strong>7-day</strong><span>plans from your conditions &amp; bloodwork</span></div>
+      <div class="stat"><strong>100%</strong><span>Indian food names &amp; portions</span></div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── PROBLEM ───────────────────────── -->
+  <section class="section problem">
+    <div class="container">
+      <div class="problem__grid">
+        <div class="reveal">
+          <span class="eyebrow">The problem</span>
+          <h2 class="h2">Most nutrition apps weren't built for you.</h2>
+          <p class="lead">
+            South Asians develop type-2 diabetes and heart disease at BMI levels
+            <b>3–5 points lower</b> than Western populations — yet mainstream apps
+            use Western calorie baselines, Western food databases, and never look at
+            your bloodwork or family history.
+          </p>
+          <p class="muted">
+            HeaVit was rebuilt from the ground up around South Asian physiology, the
+            Indian plate, and the conditions that actually run in Indian families.
+          </p>
+        </div>
+        <div class="problem__compare reveal">
+          <div class="vs vs--bad">
+            <h4>Generic calorie apps</h4>
+            <ul>
+              <li>Western BMI &amp; calorie baselines</li>
+              <li>“Lentil soup”, not dal tadka</li>
+              <li>Ignore bloodwork &amp; family risk</li>
+              <li>One-size-fits-all macros</li>
+            </ul>
+          </div>
+          <div class="vs vs--good">
+            <h4>HeaVit</h4>
+            <ul>
+              <li>South-Asian-calibrated targets</li>
+              <li>400+ Indian foods, real portions</li>
+              <li>Decodes your blood reports</li>
+              <li>Plan built from every condition at once</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── AI TOOLS (deep dives) ───────────────────────── -->
+  <section class="section section--tint" id="ai">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">The AI Centre</span>
+        <h2 class="h2">Five AI tools that actually know <span class="hl-ink">you</span>.</h2>
+        <p class="lead lead--center">
+          Every answer is grounded in your profile, conditions, medications,
+          family history, and what you ate today — never generic advice.
+        </p>
+      </div>
+
+      <!-- Feature 1: AI Nutritionist -->
+      <div class="feature reveal" id="features">
+        <div class="feature__text">
+          <span class="pill pill--lime">Most used</span>
+          <h3 class="h3">HeaVit AI — your personal nutritionist, on call 24/7</h3>
+          <p>Ask anything — “what should I have for dinner?”, “is this safe with my
+            BP medication?”, “how do I lower my HbA1c?” HeaVit answers in plain language
+            using Indian foods, your real data, and remembers your conversations across sessions.</p>
+          <ul class="ticks">
+            <li>Flags food–drug interactions proactively</li>
+            <li>Uses your city to suggest locally available foods</li>
+            <li>Adapts to diabetes, PCOS, thyroid, cholesterol &amp; more — simultaneously</li>
+          </ul>
+        </div>
+        <div class="feature__art">
+          <div class="chatdemo">
+            <div class="bubble bubble--user">What should I eat for dinner tonight?</div>
+            <div class="bubble bubble--ai">
+              <span class="ai-tag"><span class="dot dot--lime"></span> Personalised · HeaVit AI</span>
+              Based on today's 620 kcal left and your pre-diabetes goal: <b>2 bajra rotis</b>,
+              <b>palak paneer</b>, and a katori of <b>cucumber raita</b>. Low GI, ~30g protein,
+              and the methi in your sabzi helps blunt the post-meal glucose spike. 🌙
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Plate Intelligence -->
+      <div class="feature feature--rev reveal">
+        <div class="feature__text">
+          <span class="pill pill--teal">Scan &amp; score</span>
+          <h3 class="h3">Plate Intelligence — snap a photo, get a health score</h3>
+          <p>Point your camera at any meal. HeaVit identifies the foods and scores your
+            plate 0–100 for South Asian metabolic health — then tells you exactly how to
+            make it better.</p>
+          <ul class="ticks">
+            <li>Breaks down protein, fibre, glycemic load, refined carbs, sugar &amp; oil</li>
+            <li>Personalised swaps: “swap white rice for bajra → +8 points”</li>
+            <li>Tracks your 7-day plate-quality trend</li>
+          </ul>
+        </div>
+        <div class="feature__art">
+          <div class="appcard appcard--plate">
+            <span class="muted-eyebrow">Plate Health Score</span>
+            <div class="plate-score">82<small>/100</small></div>
+            <div class="plate-badge">🌟 Excellent</div>
+            <div class="plate-bars">
+              <div class="pb"><span>Protein</span><i style="--w:88%"></i></div>
+              <div class="pb"><span>Fibre</span><i style="--w:74%"></i></div>
+              <div class="pb"><span>Glycemic load</span><i style="--w:80%"></i></div>
+              <div class="pb"><span>Refined carbs</span><i style="--w:92%"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Blood Work -->
+      <div class="feature reveal">
+        <div class="feature__text">
+          <span class="pill pill--green">Clinical AI</span>
+          <h3 class="h3">Blood Work decoder — understand every biomarker</h3>
+          <p>Upload a blood-test PDF or photo. HeaVit interprets every marker in Indian
+            dietary context and turns it into a specific food plan — with South Asian cut-offs,
+            not generic Western ranges.</p>
+          <ul class="ticks">
+            <li>Vitamin D, B12, HbA1c, lipids, thyroid, ferritin &amp; more</li>
+            <li>Prioritised diet actions, ranked high → low</li>
+            <li>Flags critical values that need a doctor</li>
+          </ul>
+        </div>
+        <div class="feature__art">
+          <div class="appcard appcard--bio">
+            <div class="bio-row"><span>☀️ Vitamin D</span><b class="b-low">18 ng/mL · Low</b></div>
+            <div class="bio-row"><span>🍬 Fasting Glucose</span><b class="b-warn">108 · Borderline</b></div>
+            <div class="bio-row"><span>🩸 HbA1c</span><b class="b-warn">5.8% · Borderline</b></div>
+            <div class="bio-row"><span>🫀 Cholesterol</span><b class="b-ok">188 · Normal</b></div>
+            <div class="bio-cta">+ Add 2 eggs &amp; fatty fish 3×/week · swap white rice for millets</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 4: Deep Synthesis Meal Plan -->
+      <div class="feature feature--rev reveal">
+        <div class="feature__text">
+          <span class="pill pill--green">Deep Synthesis</span>
+          <h3 class="h3">A 7-day plan built from <em>everything</em> at once</h3>
+          <p>HeaVit's senior-AI engine reads <b>all</b> your conditions, medications,
+            family history and bloodwork together — like a doctor seeing you for the first
+            time — and writes a complete, day-by-day Indian meal plan.</p>
+          <ul class="ticks">
+            <li>Respects your exact diet: veg, eggetarian, vegan, Jain, non-veg, pescatarian</li>
+            <li>Calorie- &amp; protein-targeted, varied across all 7 days</li>
+            <li>Every meal has a clinical “why” you can actually understand</li>
+          </ul>
+        </div>
+        <div class="feature__art">
+          <div class="appcard appcard--plan">
+            <span class="muted-eyebrow">Your 7-Day Plan · Day 1</span>
+            <div class="plan-row"><b>Breakfast</b><span>Moong cheela + mint chutney · 320 kcal</span></div>
+            <div class="plan-row"><b>Lunch</b><span>Bajra roti, rajma, salad · 480 kcal</span></div>
+            <div class="plan-row"><b>Snack</b><span>Roasted chana + buttermilk · 150 kcal</span></div>
+            <div class="plan-row"><b>Dinner</b><span>Palak paneer, jowar roti · 430 kcal</span></div>
+            <div class="plan-foot">≈ 1,380 kcal · 78g protein · diabetic-friendly</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 5: Label Detective -->
+      <div class="feature reveal">
+        <div class="feature__text">
+          <span class="pill pill--teal">Scan &amp; analyse</span>
+          <h3 class="h3">Label Detective — what's really in your packaged food</h3>
+          <p>Scan any label or barcode. HeaVit decodes every ingredient, flags additives
+            banned in other countries but legal in India, and tells you what's dangerous
+            <em>for you specifically</em>.</p>
+          <ul class="ticks">
+            <li>Decodes maida, palm oil, TBHQ, azo-dyes, hidden sugars &amp; more</li>
+            <li>Condition-aware: warns harder if it conflicts with your health</li>
+            <li>Suggests a healthier Indian alternative every time</li>
+          </ul>
+        </div>
+        <div class="feature__art">
+          <div class="appcard appcard--label">
+            <div class="label-tiles">
+              <div class="lt lt--ok"><b>6</b><span>Safe</span></div>
+              <div class="lt lt--warn"><b>3</b><span>Caution</span></div>
+              <div class="lt lt--bad"><b>2</b><span>Avoid</span></div>
+            </div>
+            <div class="label-verdict">☠️ Contains TBHQ &amp; trans fat — banned in the EU</div>
+            <div class="label-alt">Try: roasted makhana or homemade chivda instead</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── BENTO FEATURE GRID ───────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Everything else</span>
+        <h2 class="h2">A complete metabolic-health companion.</h2>
+      </div>
+      <div class="bento reveal">
+        <article class="bcard bcard--wide">
+          <span class="bicon">🫀</span>
+          <h4>Metabolic Health Score</h4>
+          <p>A live 0–100 score from visceral-fat risk (waist-to-height), protein adequacy, plate quality, consistency and calorie balance — with a clear weekly breakdown.</p>
+        </article>
+        <article class="bcard">
+          <span class="bicon">🧬</span>
+          <h4>Family &amp; Genetic Risk</h4>
+          <p>Log conditions across your family tree to surface hereditary risk and the exact biomarkers to watch.</p>
+        </article>
+        <article class="bcard">
+          <span class="bicon">🍽️</span>
+          <h4>Smart Meal Logging</h4>
+          <p>400+ Indian &amp; global foods, AI portion estimates from a description, and South-Asian-calibrated goals.</p>
+        </article>
+        <article class="bcard">
+          <span class="bicon">⌚</span>
+          <h4>Wearables &amp; Recovery</h4>
+          <p>Sync Apple Health or Google Fit for steps, heart rate and sleep — and a daily recovery-readiness score.</p>
+        </article>
+        <article class="bcard">
+          <span class="bicon">🌿</span>
+          <h4>Ayurveda Mode</h4>
+          <p>Optional dosha, agni and dinacharya guidance woven into your daily insights and meal plans.</p>
+        </article>
+        <article class="bcard">
+          <span class="bicon">📖</span>
+          <h4>Recipe Library</h4>
+          <p>Indian &amp; Western recipes with diet filters, calorie ranges and lectin-load flags.</p>
+        </article>
+        <article class="bcard bcard--wide">
+          <span class="bicon">🏆</span>
+          <h4>Streaks, Badges &amp; Leaderboards</h4>
+          <p>Build daily streaks, earn milestones, and climb city, state and national leaderboards — the fun that keeps you consistent.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── SCIENCE ───────────────────────── -->
+  <section class="section section--dark" id="science">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--light">The science layer</span>
+        <h2 class="h2 h2--light">Four knowledge systems, working together.</h2>
+        <p class="lead lead--center lead--light">
+          HeaVit doesn't guess. Every recommendation is grounded in a layered,
+          evidence-first knowledge architecture.
+        </p>
+      </div>
+      <div class="science-grid reveal">
+        <div class="scard">
+          <span class="snum">01</span>
+          <h4>ICMR 2024 Guidelines</h4>
+          <p>India's official dietary guidance forms the evidence floor for every plan.</p>
+        </div>
+        <div class="scard">
+          <span class="snum">02</span>
+          <h4>The Plant Paradox</h4>
+          <p>Lectin theory, gut-microbiome health and a cold-pressed oil hierarchy.</p>
+        </div>
+        <div class="scard">
+          <span class="snum">03</span>
+          <h4>The Great Indian Diet</h4>
+          <p>Anytime / Sometime / Never foods and traditional spice pharmacology.</p>
+        </div>
+        <div class="scard">
+          <span class="snum">04</span>
+          <h4>Everyday Ayurveda</h4>
+          <p>Dosha, agni, ritucharya and food-as-medicine, applied where it helps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── HOW IT WORKS ───────────────────────── -->
+  <section class="section section--tint" id="how">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2 class="h2">From signup to clinical-grade guidance in minutes.</h2>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <span class="step__n">1</span>
+          <h4>Build your profile</h4>
+          <p>Age, body stats, diet, activity, conditions, medications and family history.</p>
+        </div>
+        <div class="step">
+          <span class="step__n">2</span>
+          <h4>Log, scan &amp; upload</h4>
+          <p>Log meals, scan your plate &amp; labels, and upload your latest blood report.</p>
+        </div>
+        <div class="step">
+          <span class="step__n">3</span>
+          <h4>Get personalised AI</h4>
+          <p>A 7-day plan, daily insights and instant answers — all calibrated to you.</p>
+        </div>
+        <div class="step">
+          <span class="step__n">4</span>
+          <h4>Track &amp; improve</h4>
+          <p>Watch your metabolic score climb with streaks, rings and weekly trends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── PRIVACY ───────────────────────── -->
+  <section class="section">
+    <div class="container privacy reveal">
+      <div class="privacy__icon">🔒</div>
+      <div>
+        <span class="eyebrow">Privacy first</span>
+        <h2 class="h2">Your health data stays yours.</h2>
+        <p class="lead">
+          HeaVit is built to comply with India's Digital Personal Data Protection Act (2023).
+          Data is encrypted in transit and at rest, sensitive family-history stays on your device,
+          and we never sell your personal data. HeaVit provides nutritional guidance and is not a
+          substitute for professional medical advice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── TESTIMONIALS (PLACEHOLDER — replace before launch) ───────────────────────── -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Loved by early users</span>
+        <h2 class="h2">Real food. Real data. Real change.</h2>
+      </div>
+      <div class="quotes reveal">
+        <!-- TODO: Replace these placeholder quotes with real, consented testimonials before launch. -->
+        <figure class="quote">
+          <blockquote>“Finally an app that knows what a katori of dal is. My plate scores keep me honest at every meal.”</blockquote>
+          <figcaption><span class="avatar">P</span> Priya · Mumbai</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>“I uploaded my blood report and got a plan that actually targeted my borderline HbA1c. Down to 5.4% since.”</blockquote>
+          <figcaption><span class="avatar">A</span> Arjun · Delhi</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>“Label Detective caught trans fat in a ‘healthy’ namkeen I'd eaten for years. Game changer.”</blockquote>
+          <figcaption><span class="avatar">S</span> Sneha · Chennai</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── PRICING ───────────────────────── -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2 class="h2">Start free. Upgrade when you're ready.</h2>
+        <p class="lead lead--center">Illustrative pricing — adjust to your launch plan.</p>
+      </div>
+      <div class="pricing reveal">
+        <div class="price">
+          <h4 class="price__name">Free</h4>
+          <div class="price__amt">₹0<span>/forever</span></div>
+          <p class="price__desc">Everything you need to start eating smarter.</p>
+          <ul class="price__list">
+            <li>Meal logging &amp; 400+ foods</li>
+            <li>Daily AI insights</li>
+            <li>Plate Intelligence scans</li>
+            <li>Streaks, score &amp; leaderboards</li>
+          </ul>
+          <a href="#waitlist" class="btn btn--ghost btn--block">Get started</a>
+        </div>
+        <div class="price price--featured">
+          <span class="price__tag">Most popular</span>
+          <h4 class="price__name">Pro</h4>
+          <div class="price__amt">₹499<span>/month</span></div>
+          <p class="price__desc">The full clinical-grade experience.</p>
+          <ul class="price__list">
+            <li>Everything in Free, plus:</li>
+            <li>Deep-Synthesis 7-day meal plans</li>
+            <li>Blood Work decoder &amp; tracking</li>
+            <li>Unlimited HeaVit AI chat</li>
+            <li>Label Detective &amp; wearables</li>
+          </ul>
+          <a href="#waitlist" class="btn btn--lime btn--block">Get early access</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FAQ ───────────────────────── -->
+  <section class="section section--tint" id="faq">
+    <div class="container container--narrow">
+      <div class="section__head reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="h2">Questions, answered.</h2>
+      </div>
+      <div class="faq reveal">
+        <details class="faq__item">
+          <summary>What makes HeaVit different from Yazio, HealthifyMe or Cal AI?</summary>
+          <p>HeaVit is calibrated specifically for South Asian metabolism — lower BMI risk thresholds, a 400+ Indian food database with real portions, and AI that reads your bloodwork and family history. It's clinical guidance for the Indian plate, not a Western calorie counter.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Is HeaVit a substitute for a doctor or dietitian?</summary>
+          <p>No. HeaVit provides personalised nutritional guidance for informational purposes. It doesn't diagnose, treat or cure disease. Always consult a qualified healthcare provider before making changes, especially if you have a condition or take medication.</p>
+        </details>
+        <details class="faq__item">
+          <summary>How does the plate scan work?</summary>
+          <p>You snap a photo of your meal; AI vision identifies the foods, maps them to our Indian food database, and scores the plate 0–100 across protein, fibre, glycemic load, refined carbs, sugar and oil — then suggests specific swaps to improve it.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Is my health data private?</summary>
+          <p>Yes. Data is encrypted in transit and at rest, family-history stays on-device, and we never sell your data. HeaVit is built to comply with India's DPDP Act 2023.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Which diets does HeaVit support?</summary>
+          <p>Vegetarian, eggetarian, vegan, Jain, non-vegetarian and pescatarian — strictly respected in every meal plan and suggestion.</p>
+        </details>
+        <details class="faq__item">
+          <summary>When can I get it?</summary>
+          <p>HeaVit is rolling out to early users now. Join the waitlist below and we'll notify you the moment your access is ready.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FINAL CTA / WAITLIST ───────────────────────── -->
+  <section class="section cta" id="waitlist">
+    <div class="container cta__inner reveal">
+      <span class="dot dot--lime"></span>
+      <h2 class="cta__title">Eat smarter for your body.<br />Join the HeaVit waitlist.</h2>
+      <p class="cta__sub">Be first to get clinical-grade, South-Asian-calibrated nutrition AI.</p>
+      <!--
+        FORM SETUP: This posts to Formspree (free). Create a form at https://formspree.io,
+        then replace YOUR_FORM_ID below. Or swap the action for your own endpoint.
+      -->
+      <form class="cta__form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
+        <button type="submit" class="btn btn--lime">Get early access</button>
+      </form>
+      <p class="cta__fine">No spam. Unsubscribe anytime. HeaVit is not a substitute for medical advice.</p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ───────────────────────── FOOTER ───────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="brand brand--light">
+          <img src="heavit-logo.png" alt="HeaVit Logo" class="brand__logo">
+          <span class="brand__name">HeaVit</span>
+        </a>
+        <p>AI nutrition intelligence, calibrated for South Asian metabolism.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h5>Product</h5>
+          <a href="#features">Features</a>
+          <a href="#ai">AI Tools</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#how">How it works</a>
+        </div>
+        <div class="footer__col">
+          <h5>Company</h5>
+          <a href="#science">Science</a>
+          <a href="#faq">FAQ</a>
+          <a href="#waitlist">Early access</a>
+        </div>
+        <div class="footer__col">
+          <h5>Legal</h5>
+          <a href="https://fringe-throne-1dc.notion.site/HeaVit-Privacy-Policy-34108883437c80d69330d50a7eaeea49" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://fringe-throne-1dc.notion.site/HeaVit-Terms-of-Service-34108883437c80ae8698f58ddd672418" target="_blank" rel="noopener">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> HeaVit. All rights reserved.</p>
+      <p class="footer__disc">HeaVit provides general nutritional information and is not a substitute for professional medical advice, diagnosis or treatment.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
