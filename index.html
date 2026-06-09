@@ -13,10 +13,14 @@
   <meta property="og:title" content="HeaVit — AI Nutrition Coach Built for Indian Bodies" />
   <meta property="og:description" content="Snap your plate, decode your bloodwork, and get a clinical-grade plan calibrated for South Asian metabolism." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="og-image.png" />
+  <meta property="og:image" content="https://heavit-website.vercel.app/og-image.png" />
+  <meta property="twitter:image" content="https://heavit-website.vercel.app/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <link rel="canonical" href="https://heavit-website.vercel.app/" />
+  <meta property="og:url" content="https://heavit-website.vercel.app/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="image" href="heavit-logo.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -595,10 +599,11 @@
         FORM SETUP: This posts to Formspree (free). Create a form at https://formspree.io,
         then replace YOUR_FORM_ID below. Or swap the action for your own endpoint.
       -->
-      <form class="cta__form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
-        <button type="submit" class="btn btn--lime">Get early access</button>
+      <form class="cta__form" id="waitlistForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <input type="email" name="email" id="waitlistEmail" placeholder="you@example.com" required aria-label="Email address" autocomplete="email" />
+        <button type="submit" class="btn btn--lime" id="waitlistBtn">Get early access</button>
       </form>
+      <p class="cta__feedback" id="waitlistFeedback" aria-live="polite"></p>
       <p class="cta__fine">No spam. Unsubscribe anytime. HeaVit is not a substitute for medical advice.</p>
     </div>
   </section>
