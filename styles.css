@@ -121,10 +121,12 @@ a { color: inherit; text-decoration: none; }
 .brand { display: inline-flex; align-items: center; gap: 9px; font-weight: 900; font-size: 21px; letter-spacing: -.5px; color: var(--primary); }
 
 .brand__logo {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 .brand__mark {
   width: 32px; height: 32px; border-radius: 9px;
@@ -403,6 +405,7 @@ a { color: inherit; text-decoration: none; }
 .footer { background: var(--dark); color: rgba(255,255,255,.7); padding: 64px 0 30px; }
 .footer__inner { display: grid; grid-template-columns: 1.2fr 2fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--dark-line); }
 .footer__brand p { font-size: 14px; max-width: 280px; margin-top: 14px; }
+.footer__brand .brand__logo { width: 40px; height: 40px; }
 .footer__cols { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
 .footer__col h5 { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #fff; margin-bottom: 14px; }
 .footer__col a { display: block; font-size: 14px; padding: 5px 0; transition: color .2s; }
@@ -463,37 +466,37 @@ section[id], #top { scroll-margin-top: 78px; }
   .js .reveal { opacity: 1 !important; transform: none !important; }
 }
 .coming-soon{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-top:24px;
-  margin-bottom:30px;
-  color:rgba(255,255,255,.75);
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:.3px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  margin-bottom: 30px;
+  color: rgba(255,255,255,.75);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .3px;
 }
 
-.coming-soon img{
-  height:36px;
-  width:auto;
+.coming-soon span {
+  white-space: nowrap;
 }
-@media (max-width: 768px) {
 
-  .coming-soon{
-    flex-wrap: wrap;
+.coming-soon img {
+  height: 34px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  /* on mobile hero is centred, so centre the coming-soon row too */
+  .coming-soon {
     justify-content: center;
-    gap: 10px;
   }
+}
 
-  .coming-soon span{
-    width: 100%;
-    text-align: center;
+@media (max-width: 400px) {
+  .coming-soon img {
+    height: 30px;
   }
-
-  .coming-soon img{
-    height: 32px;
-    max-width: 44%;
-  }
-
 }
