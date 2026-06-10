@@ -448,11 +448,15 @@ section[id], #top { scroll-margin-top: 78px; }
 @media (max-width: 900px) {
   .nav__links, .nav__actions { display: none; }
   .nav__toggle { display: flex; }
-  .hero { padding: 44px 0 70px; }
-  .hero__inner { grid-template-columns: 1fr; gap: 56px; text-align: center; }
+  .hero { padding: 44px 0 72px; }
+  .hero__inner { grid-template-columns: 1fr; gap: 52px; text-align: center; }
   .hero__sub { margin-left: auto; margin-right: auto; }
-  .hero__cta, .hero__proof { justify-content: center; }
-  .hero__art { overflow: visible; } /* allow float chips to show but contained by body overflow-x:hidden */
+  .hero__cta, .hero__proof, .coming-soon { justify-content: center; }
+  .hero__proof { gap: 30px; }
+  .hero__proof div { align-items: center; text-align: center; }
+  /* Cap the art width so the floating chips hug the phone instead of the
+     screen edges (which looked disconnected on mobile). */
+  .hero__art { overflow: visible; width: 100%; max-width: 360px; margin-inline: auto; }
   .statsbar__inner { grid-template-columns: repeat(2,1fr); gap: 26px; }
   .problem__grid { grid-template-columns: 1fr; gap: 36px; }
   .feature { grid-template-columns: 1fr; gap: 32px; padding: 28px 0; }
@@ -460,7 +464,7 @@ section[id], #top { scroll-margin-top: 78px; }
   .feature--rev .feature__art { order: 1; }
   .bento, .science-grid, .steps, .quotes { grid-template-columns: 1fr 1fr; }
   .bento .bcard--wide, .bento .bcard--wide:first-of-type, .bento .bcard--wide:last-of-type { grid-column: span 2; }
-  .pricing { grid-template-columns: 1fr; }
+  .pricing { grid-template-columns: 1fr; max-width: 440px; }
   .privacy { flex-direction: column; gap: 20px; padding: 32px; }
   .footer__inner { grid-template-columns: 1fr; gap: 28px; }
 }
@@ -468,14 +472,22 @@ section[id], #top { scroll-margin-top: 78px; }
   .section { padding: 64px 0; }
   .bento, .science-grid, .steps, .quotes { grid-template-columns: 1fr; }
   .bento .bcard--wide, .bento .bcard--wide:first-of-type, .bento .bcard--wide:last-of-type { grid-column: span 1; }
-  .statsbar__inner { grid-template-columns: 1fr 1fr; }
+  .statsbar__inner { grid-template-columns: 1fr 1fr; gap: 22px; }
   .cta__form { flex-direction: column; }
   .cta__form .btn { width: 100%; }
   .footer__bottom { flex-direction: column; gap: 10px; }
-  /* keep float chips visible but scaled down and contained */
-  .floatcard--plate { left: 0; transform: scale(.85); transform-origin: left center; }
-  .floatcard--bio { right: 0; transform: scale(.85); transform-origin: right center; }
-  .hero__art { padding: 0 8px; }
+  /* Float chips hug the phone (art capped to ~310px) and shrink toward it. */
+  .hero__art { max-width: 310px; padding: 0; }
+  .floatcard { transform: scale(.8); }
+  .floatcard--plate { top: 34px; left: -6px; transform-origin: left center; }
+  .floatcard--bio { bottom: 50px; right: -6px; transform-origin: right center; }
+  /* Region/billing controls breathe a little on very small screens. */
+  .pricing__region { line-height: 1.9; }
+}
+@media (max-width: 380px) {
+  .container { padding: 0 18px; }
+  .hero__proof { gap: 20px; }
+  .seg__btn { padding: 9px 14px; font-size: 13px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

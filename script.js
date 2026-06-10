@@ -87,7 +87,7 @@
           throw new Error(data.error || 'Submission failed');
         }
       } catch (err) {
-        feedback.textContent = 'Something went wrong — please try again or email us directly.';
+        feedback.textContent = 'Something went wrong. Please try again, or email us directly.';
         feedback.className = 'cta__feedback cta__feedback--err';
         btn.textContent = 'Get early access';
         btn.disabled = false;
