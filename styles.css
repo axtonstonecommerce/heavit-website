@@ -369,12 +369,29 @@ a { color: inherit; text-decoration: none; }
 .price__name { font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
 .price__amt { font-size: 44px; font-weight: 900; letter-spacing: -1.5px; margin: 10px 0 4px; }
 .price__amt span { font-size: 15px; font-weight: 600; opacity: .6; letter-spacing: 0; }
+.price__amt .price__main { font-size: inherit; font-weight: inherit; opacity: 1; letter-spacing: inherit; }
+.price__billnote { font-size: 12px; color: var(--muted); font-weight: 600; margin: -2px 0 16px; }
+.price--featured .price__billnote { color: rgba(255,255,255,.6); }
 .price__desc { font-size: 14px; color: var(--muted); margin-bottom: 22px; }
 .price--featured .price__desc { color: rgba(255,255,255,.7); }
 .price__list { list-style: none; display: grid; gap: 12px; margin-bottom: 26px; }
 .price__list li { position: relative; padding-left: 28px; font-size: 14.5px; }
 .price__list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 900; }
 .price--featured .price__list li::before { color: var(--lime); }
+
+/* Billing toggle + region switch */
+.pricing__controls { display: flex; justify-content: center; margin-bottom: 28px; }
+.seg { display: inline-flex; gap: 4px; padding: 5px; background: var(--surface); border: 1px solid var(--line); border-radius: 99px; box-shadow: var(--shadow-sm); }
+.seg__btn { display: inline-flex; align-items: center; gap: 8px; border: none; background: none; cursor: pointer; font: inherit; font-size: 14px; font-weight: 700; color: var(--muted); padding: 9px 18px; border-radius: 99px; transition: background .2s, color .2s; }
+.seg__btn:hover { color: var(--primary); }
+.seg__btn.is-active { background: var(--primary); color: #fff; }
+.seg__btn.is-active:hover { color: #fff; }
+.seg__save { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .4px; background: var(--lime); color: var(--primary-d); padding: 2px 7px; border-radius: 99px; }
+.seg__btn.is-active .seg__save { background: rgba(255,255,255,.2); color: #fff; }
+.seg.is-hidden { display: none; }
+.pricing__region { text-align: center; margin-top: 22px; font-size: 13.5px; color: var(--muted); }
+.linklike { background: none; border: none; cursor: pointer; font: inherit; font-size: inherit; color: var(--primary); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; padding: 0 0 0 5px; }
+.linklike:hover { opacity: .8; }
 
 /* ─── FAQ ────────────────────────────────────────────────── */
 .faq { display: grid; gap: 12px; }
