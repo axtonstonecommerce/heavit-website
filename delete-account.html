@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.className = 'js';</script>
+  <title>Delete Your Account &amp; Data · HeaVit</title>
+  <meta name="description" content="How to permanently delete your HeaVit account and all associated data, from inside the app or by request." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://heavit-website.vercel.app/delete-account" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .del-form { margin-top: 22px; }
+    .del-label { display: block; font-size: 13px; font-weight: 700; color: var(--ink); margin: 14px 0 6px; }
+    .del-input {
+      width: 100%; font-family: inherit; font-size: 15px; color: var(--ink);
+      background: var(--bg); border: 1.5px solid var(--line); border-radius: var(--radius-sm);
+      padding: 12px 14px; transition: border-color .2s;
+    }
+    .del-input:focus { outline: none; border-color: var(--primary); }
+    textarea.del-input { resize: vertical; min-height: 74px; }
+    .del-check { display: flex; gap: 10px; align-items: flex-start; margin-top: 16px; font-size: 14px; color: var(--muted); line-height: 1.5; cursor: pointer; }
+    .del-check input { margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--primary); }
+    .del-feedback { margin-top: 14px; font-size: 14px; font-weight: 600; min-height: 20px; }
+    .del-feedback--ok { color: var(--ok); }
+    .del-feedback--err { color: var(--bad); }
+  </style>
+</head>
+<body>
+
+  <!-- ───────────────────────── NAV ───────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/#top" class="brand" aria-label="HeaVit home">
+        <img src="/heavit-logo.png" alt="HeaVit Logo" class="brand__logo">
+        <span class="brand__name">HeaVit</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="/#get" class="btn btn--primary btn--sm">Get the app</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#get">Get the app</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container container--narrow reveal">
+        <span class="eyebrow">Account &amp; data</span>
+        <h1 class="h2">Delete your account &amp; data</h1>
+        <p class="lead">
+          You're always in control of your HeaVit data. This page explains how to permanently
+          delete your account, whether or not you still have the app installed.
+        </p>
+
+        <div style="height:36px"></div>
+
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:28px 28px 30px; box-shadow:var(--shadow-sm); margin-bottom:24px;">
+          <h3 class="h3" style="margin-bottom:10px;">Option 1 — Delete it yourself, in the app</h3>
+          <p class="muted" style="margin-top:0;">The fastest way, available any time you're signed in.</p>
+          <ol style="margin:18px 0 0 20px; color:var(--ink); line-height:1.9;">
+            <li>Open HeaVit and sign in.</li>
+            <li>Go to <b>Settings → Legal &amp; Privacy</b>.</li>
+            <li>Tap <b>Delete Account</b> and confirm.</li>
+          </ol>
+          <p style="margin-top:16px; color:var(--muted); font-size:15px;">
+            Deletion happens immediately and cannot be undone.
+          </p>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:28px 28px 30px; box-shadow:var(--shadow-sm); margin-bottom:24px;">
+          <h3 class="h3" style="margin-bottom:10px;">Option 2 — Request deletion here</h3>
+          <p class="muted" style="margin-top:0;">
+            No longer have HeaVit installed, or can't sign in? Submit a deletion request below
+            using the email address linked to your account, and our team will remove your
+            account and all associated data.
+          </p>
+
+          <form id="deleteForm" class="del-form" novalidate>
+            <label class="del-label" for="delEmail">Account email <span aria-hidden="true">*</span></label>
+            <input class="del-input" type="email" id="delEmail" name="email"
+                   placeholder="you@example.com" required autocomplete="email" />
+
+            <label class="del-label" for="delReason">Reason (optional)</label>
+            <textarea class="del-input" id="delReason" name="reason" rows="3"
+                      placeholder="Anything you'd like us to know (optional)"></textarea>
+
+            <label class="del-check">
+              <input type="checkbox" id="delConfirm" required />
+              <span>I understand this permanently deletes my HeaVit account and all my data, and cannot be undone.</span>
+            </label>
+
+            <button type="submit" class="btn btn--lime" id="delBtn" style="margin-top:18px;">
+              Submit deletion request
+            </button>
+            <p class="del-feedback" id="delFeedback" aria-live="polite"></p>
+          </form>
+
+          <p style="margin-top:16px; color:var(--muted); font-size:15px;">
+            We verify the request is coming from the account owner before deleting anything.
+            Requests are processed within 30 days. You can also email us directly at
+            <a href="mailto:support@heavit.com?subject=Delete%20my%20HeaVit%20account" style="color:var(--primary); font-weight:700; text-decoration:underline;">support@heavit.com</a>.
+          </p>
+        </div>
+
+        <div style="background:var(--tint); border-radius:var(--radius); padding:28px;">
+          <h3 class="h3" style="margin-bottom:10px;">What gets deleted</h3>
+          <ul class="ticks" style="margin-top:8px;">
+            <li>Your profile, body stats, goals and health conditions</li>
+            <li>All logged meals, plate scans and recipe imports</li>
+            <li>Blood work reports and AI-generated meal plans</li>
+            <li>Your login credentials and account access</li>
+          </ul>
+          <p style="margin-top:18px; color:var(--muted); font-size:15px;">
+            Deletion is permanent and cannot be reversed. Some information may be retained
+            briefly in encrypted backups or where we're required to keep it for legal or
+            fraud-prevention purposes, after which it is purged automatically. See our
+            <a href="https://fringe-throne-1dc.notion.site/HeaVit-Privacy-Policy-34108883437c80d69330d50a7eaeea49" target="_blank" rel="noopener" style="color:var(--primary); font-weight:700; text-decoration:underline;">Privacy Policy</a>
+            for full details.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ───────────────────────── FOOTER ───────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/#top" class="brand brand--light">
+          <img src="/heavit-logo.png" alt="HeaVit Logo" class="brand__logo">
+          <span class="brand__name">HeaVit</span>
+        </a>
+        <p>AI nutrition intelligence, calibrated to your body, whether South Asian or Western.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h5>Product</h5>
+          <a href="/#features">Features</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#how">How it works</a>
+        </div>
+        <div class="footer__col">
+          <h5>Company</h5>
+          <a href="/#science">Science</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/#get">Get the app</a>
+        </div>
+        <div class="footer__col">
+          <h5>Legal</h5>
+          <a href="https://fringe-throne-1dc.notion.site/HeaVit-Privacy-Policy-34108883437c80d69330d50a7eaeea49" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://fringe-throne-1dc.notion.site/HeaVit-Terms-of-Service-34108883437c80ae8698f58ddd672418" target="_blank" rel="noopener">Terms of Service</a>
+          <a href="/delete-account">Delete Account</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> HeaVit. All rights reserved.</p>
+      <p class="footer__disc">HeaVit provides general nutritional information and is not a substitute for professional medical advice, diagnosis or treatment.</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script>
+    // ── Account-deletion request form ──────────────────────────
+    // Submits to Formspree, which emails each request to support@heavit.com.
+    // If the endpoint is ever cleared, it falls back to opening the user's
+    // email client pre-filled, so requests still reach support.
+    (function () {
+      var FORMSPREE = 'https://formspree.io/f/xgojrnee';
+      var SUPPORT   = 'support@heavit.com';
+
+      var form = document.getElementById('deleteForm');
+      if (!form) return;
+      var email    = document.getElementById('delEmail');
+      var reason   = document.getElementById('delReason');
+      var confirm  = document.getElementById('delConfirm');
+      var btn      = document.getElementById('delBtn');
+      var feedback = document.getElementById('delFeedback');
+      var configured = FORMSPREE.indexOf('YOUR_FORM_ID') === -1;
+
+      function say(msg, ok) {
+        feedback.textContent = msg;
+        feedback.className = 'del-feedback ' + (ok ? 'del-feedback--ok' : 'del-feedback--err');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var addr = (email.value || '').trim();
+        if (!addr || !/.+@.+\..+/.test(addr)) { say('Please enter a valid email address.', false); return; }
+        if (!confirm.checked) { say('Please confirm you understand this is permanent.', false); return; }
+
+        // Fallback: no Formspree yet → open a pre-filled email so nothing is lost.
+        if (!configured) {
+          var subject = encodeURIComponent('Delete my HeaVit account');
+          var body = encodeURIComponent('Account email: ' + addr + '\nReason: ' + (reason.value || '(none)') +
+            '\n\nI confirm I want my HeaVit account and all data permanently deleted.');
+          window.location.href = 'mailto:' + SUPPORT + '?subject=' + subject + '&body=' + body;
+          say('Opening your email app to send the request to ' + SUPPORT + '…', true);
+          return;
+        }
+
+        btn.disabled = true; btn.textContent = 'Submitting…'; say('', true);
+        fetch(FORMSPREE, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: addr, reason: reason.value || '(none)', request: 'account-deletion' }),
+        }).then(function (res) {
+          if (res.ok) {
+            form.reset();
+            say('✓ Request received. We’ll confirm by email and delete your account within 30 days.', true);
+          } else { throw new Error('failed'); }
+        }).catch(function () {
+          say('Something went wrong. Please email ' + SUPPORT + ' directly.', false);
+        }).finally(function () {
+          btn.disabled = false; btn.textContent = 'Submit deletion request';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

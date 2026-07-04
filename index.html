@@ -48,7 +48,7 @@
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav__actions">
-        <a href="#waitlist" class="btn btn--primary btn--sm">Get early access</a>
+        <a href="#get" class="btn btn--primary btn--sm">Get the app</a>
       </div>
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -61,7 +61,7 @@
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="#waitlist" class="btn btn--primary">Get early access</a>
+      <a href="#get" class="btn btn--primary">Get the app</a>
     </div>
   </header>
 
@@ -84,7 +84,7 @@
           your bloodwork, and get a clinical-grade plan that fits how <em>you</em> actually eat.
         </p>
         <div class="hero__cta">
-          <a href="#waitlist" class="btn btn--lime">Get early access →</a>
+          <a href="#get" class="btn btn--lime">Get the app →</a>
           <a href="#how" class="btn btn--ghost-light">See how it works</a>
         </div>
       <div class="coming-soon">
@@ -383,9 +383,9 @@
           <p>An ever-growing library of Indian &amp; global foods, AI portion estimates from a description, and goals calibrated to your body.</p>
         </article>
         <article class="bcard">
-          <span class="bicon">⌚</span>
-          <h4>Wearables &amp; Recovery</h4>
-          <p>Sync Apple Health or Google Fit for steps, heart rate and sleep, plus a daily recovery-readiness score.</p>
+          <span class="bicon">💬</span>
+          <h4>Ask HeaVit Anything</h4>
+          <p>A personal AI nutrition coach in your pocket. Get instant, judgment-free answers about your meals, your labels and your body, calibrated to you.</p>
         </article>
         <article class="bcard">
           <span class="bicon">🌿</span>
@@ -547,7 +547,7 @@
             <li>Streaks, metabolic score &amp; leaderboards</li>
             <li>HeaVit AI chat</li>
           </ul>
-          <a href="#waitlist" class="btn btn--ghost btn--block">Get early access</a>
+          <a href="#get" class="btn btn--ghost btn--block">Get the app</a>
         </div>
         <div class="price price--featured" data-plan="pro">
           <span class="price__tag">Most popular</span>
@@ -559,10 +559,9 @@
             <li>Everything in Basic, plus:</li>
             <li>Deep-Synthesis 7-day meal plans</li>
             <li>Blood Work decoder &amp; tracking</li>
-            <li>Unlimited HeaVit AI chat</li>
-            <li>Label Detective &amp; wearable sync</li>
+            <li>Label Detective</li>
           </ul>
-          <a href="#waitlist" class="btn btn--lime btn--block">Get early access</a>
+          <a href="#get" class="btn btn--lime btn--block">Get the app</a>
         </div>
       </div>
 
@@ -603,28 +602,28 @@
         </details>
         <details class="faq__item">
           <summary>When can I get it?</summary>
-          <p>HeaVit is rolling out to early users now. Join the waitlist below and we'll notify you the moment your access is ready.</p>
+          <p>HeaVit launches soon on iOS and Android. Head to the App Store or Google Play to download it the moment it goes live.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- ───────────────────────── FINAL CTA / WAITLIST ───────────────────────── -->
-  <section class="section cta" id="waitlist">
+  <!-- ───────────────────────── FINAL CTA / LAUNCH ───────────────────────── -->
+  <section class="section cta" id="get">
     <div class="container cta__inner reveal">
       <span class="dot dot--lime"></span>
-      <h2 class="cta__title">Eat smarter for your body.<br />Join the HeaVit waitlist.</h2>
-      <p class="cta__sub">Be first to get clinical-grade nutrition AI, calibrated to your body, wherever you eat.</p>
+      <h2 class="cta__title">Your body's nutrition coach<br />is almost here.</h2>
+      <p class="cta__sub">HeaVit launches soon on iOS &amp; Android. Clinical-grade nutrition AI, calibrated to your body, wherever you eat.</p>
       <!--
-        FORM SETUP: This posts to Formspree (free). Create a form at https://formspree.io,
-        then replace YOUR_FORM_ID below. Or swap the action for your own endpoint.
+        STORE LINKS: once the listings are live, wrap each <img> below in
+        <a href="…store URL…" class="store-badges__link" target="_blank" rel="noopener">
+        to make the badges clickable.
       -->
-      <form class="cta__form" id="waitlistForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-        <input type="email" name="email" id="waitlistEmail" placeholder="you@example.com" required aria-label="Email address" autocomplete="email" />
-        <button type="submit" class="btn btn--lime" id="waitlistBtn">Get early access</button>
-      </form>
-      <p class="cta__feedback" id="waitlistFeedback" aria-live="polite"></p>
-      <p class="cta__fine">No spam. Unsubscribe anytime. HeaVit is not a substitute for medical advice.</p>
+      <div class="store-badges store-badges--soon" role="img" aria-label="Coming soon to the App Store and Google Play">
+        <img src="images/app-store-badge.svg" alt="Coming soon to the App Store" />
+        <img src="images/google-play.png" alt="Coming soon to Google Play" />
+      </div>
+      <p class="cta__fine">Launching soon on the App Store &amp; Google Play. HeaVit is not a substitute for medical advice.</p>
     </div>
   </section>
 
@@ -652,12 +651,13 @@
           <h5>Company</h5>
           <a href="#science">Science</a>
           <a href="#faq">FAQ</a>
-          <a href="#waitlist">Early access</a>
+          <a href="#get">Get the app</a>
         </div>
         <div class="footer__col">
           <h5>Legal</h5>
           <a href="https://fringe-throne-1dc.notion.site/HeaVit-Privacy-Policy-34108883437c80d69330d50a7eaeea49" target="_blank" rel="noopener">Privacy Policy</a>
           <a href="https://fringe-throne-1dc.notion.site/HeaVit-Terms-of-Service-34108883437c80ae8698f58ddd672418" target="_blank" rel="noopener">Terms of Service</a>
+          <a href="/delete-account">Delete Account</a>
         </div>
       </div>
     </div>

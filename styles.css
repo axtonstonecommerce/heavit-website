@@ -507,6 +507,26 @@ section[id], #top { scroll-margin-top: 78px; }
   letter-spacing: .3px;
 }
 
+/* Store badges in the final launch CTA */
+.store-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 4px 0 22px;
+}
+.store-badges img { height: 48px; width: auto; }
+.store-badges--soon img { opacity: .85; }
+.store-badges__link {
+  display: inline-flex;
+  transition: transform .2s var(--ease), opacity .2s;
+}
+.store-badges__link:hover { transform: translateY(-2px); opacity: .9; }
+@media (max-width: 400px) {
+  .store-badges img { height: 42px; }
+}
+
 .coming-soon span {
   white-space: nowrap;
 }
