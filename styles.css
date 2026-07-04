@@ -516,16 +516,16 @@ section[id], #top { scroll-margin-top: 78px; }
   gap: 14px;
   margin: 4px 0 22px;
 }
-.store-badges img { height: 48px; width: auto; }
+/* Both badges are locked to the SAME height so neither looks larger than
+   the other (App Store marketing-guideline parity). Inline height on the
+   <img> tags enforces this even if this stylesheet is cached. */
+.store-badges img { height: 44px; width: auto; }
 .store-badges--soon img { opacity: .85; }
 .store-badges__link {
   display: inline-flex;
   transition: transform .2s var(--ease), opacity .2s;
 }
 .store-badges__link:hover { transform: translateY(-2px); opacity: .9; }
-@media (max-width: 400px) {
-  .store-badges img { height: 42px; }
-}
 
 .coming-soon span {
   white-space: nowrap;
