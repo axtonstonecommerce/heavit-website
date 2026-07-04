@@ -518,7 +518,15 @@ section[id], #top { scroll-margin-top: 78px; }
 }
 /* Both badges are locked to the SAME height so neither looks larger than
    the other (App Store marketing-guideline parity). Inline height on the
-   <img> tags enforces this even if this stylesheet is cached. */
+   <img> tags enforces this even if this stylesheet is cached. Each badge
+   sits in an equal-width slot so the narrower App Store badge is padded
+   evenly to match the Google Play badge's footprint. */
+.store-badge-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 152px;
+}
 .store-badges img { height: 44px; width: auto; }
 .store-badges--soon img { opacity: .85; }
 .store-badges__link {
