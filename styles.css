@@ -95,7 +95,7 @@ a { color: inherit; text-decoration: none; }
   font-family: inherit; font-weight: 800; font-size: 15px;
   padding: 14px 24px; border-radius: 99px; border: none; cursor: pointer;
   transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s;
-  white-space: nowrap;
+  text-align: center; max-width: 100%;
 }
 .btn--sm { padding: 10px 18px; font-size: 14px; }
 .btn--block { display: flex; width: 100%; }
@@ -117,7 +117,7 @@ a { color: inherit; text-decoration: none; }
   transition: box-shadow .3s, background .3s;
 }
 .nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 30px -18px rgba(27,67,50,.25); }
-.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 70px; }
 .brand { display: inline-flex; align-items: center; gap: 9px; font-weight: 900; font-size: 21px; letter-spacing: -.5px; color: var(--primary); }
 
 .brand__logo {
@@ -182,19 +182,22 @@ a { color: inherit; text-decoration: none; }
 /* Phone mockup */
 .hero__art { position: relative; display: flex; justify-content: center; }
 .phone {
-  position: relative; width: 290px; padding: 12px;
+  position: relative; width: min(290px, 100%); padding: 12px;
   background: linear-gradient(160deg, #2a2a2a, #111);
   border-radius: 44px;
   box-shadow: 0 50px 90px -30px rgba(0,0,0,.7), inset 0 0 0 2px rgba(255,255,255,.06);
 }
 .phone__notch { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 92px; height: 22px; background: #000; border-radius: 99px; z-index: 3; }
 .phone__screen {
+  /* ink colour: the mockup sits inside the white-text hero and was inheriting
+     white — "Good morning", the score and the chip titles were invisible. */
+  color: var(--ink);
   background: var(--bg); border-radius: 34px; overflow: hidden;
   padding: 38px 14px 16px; display: flex; flex-direction: column; gap: 12px; min-height: 560px;
 }
 .appcard { background: var(--surface); border-radius: 20px; padding: 16px; box-shadow: var(--shadow-sm); border: 1px solid var(--line); }
 .appcard--hero { padding-bottom: 18px; }
-.app-row { display: flex; align-items: center; justify-content: space-between; }
+.app-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
 .app-brand { font-weight: 900; color: var(--primary); font-size: 16px; }
 .app-streak { background: rgba(187,221,0,.25); color: var(--primary); font-weight: 800; font-size: 12px; padding: 4px 10px; border-radius: 99px; }
 .app-greet { font-weight: 800; font-size: 15px; margin: 10px 0 6px; letter-spacing: -.3px; }
@@ -218,13 +221,14 @@ a { color: inherit; text-decoration: none; }
 
 /* Floating cards */
 .floatcard {
-  position: absolute; background: var(--surface); border-radius: 16px; padding: 12px 14px;
+  position: absolute; z-index: 4; /* above the phone notch (z-index 3) */
+  background: var(--surface); color: var(--ink); border-radius: 16px; padding: 12px 14px;
   box-shadow: var(--shadow); display: flex; align-items: center; gap: 11px; border: 1px solid var(--line);
   animation: float 5s ease-in-out infinite;
   max-width: calc(50% + 20px); /* prevent overflow on small screens */
 }
-.floatcard strong { display: block; font-size: 13px; font-weight: 800; white-space: nowrap; }
-.floatcard span { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.floatcard strong { display: block; font-size: 13px; font-weight: 800; }
+.floatcard span { font-size: 11px; color: var(--muted); }
 .floatcard--plate { top: 60px; left: -16px; }
 .floatcard--plate .floatcard__score { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: rgba(44,105,78,.12); color: var(--teal); font-weight: 900; flex-shrink: 0; }
 .floatcard--bio { bottom: 70px; right: -16px; animation-delay: -2.5s; }
@@ -297,7 +301,7 @@ a { color: inherit; text-decoration: none; }
 .pb i::after { content: ''; position: absolute; inset: 0; width: var(--w); border-radius: 99px; background: var(--teal); }
 
 /* bio card */
-.appcard--bio .bio-row { display: flex; justify-content: space-between; align-items: center; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.appcard--bio .bio-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
 .bio-row b { font-weight: 700; font-size: 13px; }
 .b-low, .b-warn { color: var(--warn); } .b-low { color: var(--bad); } .b-ok { color: var(--ok); }
 .bio-cta { margin-top: 14px; background: rgba(80,102,0,.07); color: var(--primary); font-weight: 700; font-size: 12.5px; padding: 11px 13px; border-radius: 12px; }
@@ -456,7 +460,13 @@ section[id], #top { scroll-margin-top: 78px; }
   .hero__proof div { align-items: center; text-align: center; }
   /* Cap the art width so the floating chips hug the phone instead of the
      screen edges (which looked disconnected on mobile). */
-  .hero__art { overflow: visible; width: 100%; max-width: 360px; margin-inline: auto; }
+  .hero__art { overflow: visible; width: 100%; max-width: 360px; margin-inline: auto; margin-top: 2.5em; /* em: room for the chip grows with text size */ }
+  /* Chips hang off the phone's top / bottom bezel and are anchored on the
+     edge facing away from the screen, so a taller chip (wrapped or large text)
+     grows outward instead of covering "Good morning, Emma" and the cards. */
+  .floatcard { max-width: 85%; }
+  .floatcard--plate { top: auto; bottom: calc(100% - 58px); left: -12px; }
+  .floatcard--bio { bottom: auto; top: calc(100% - 14px); right: -12px; }
   .statsbar__inner { grid-template-columns: repeat(2,1fr); gap: 26px; }
   .problem__grid { grid-template-columns: 1fr; gap: 36px; }
   .feature { grid-template-columns: 1fr; gap: 32px; padding: 28px 0; }
@@ -478,9 +488,12 @@ section[id], #top { scroll-margin-top: 78px; }
   .footer__bottom { flex-direction: column; gap: 10px; }
   /* Float chips hug the phone (art capped to ~310px) and shrink toward it. */
   .hero__art { max-width: 310px; padding: 0; }
-  .floatcard { transform: scale(.8); }
-  .floatcard--plate { top: 34px; left: -6px; transform-origin: left center; }
-  .floatcard--bio { bottom: 50px; right: -6px; transform-origin: right center; }
+  /* `scale` (not transform) so it composes with the float animation, which
+     animates `transform` and was silently cancelling scale(.8). */
+  .floatcard { scale: .8; }
+  .hero__art { margin-top: 3.5em; }
+  .floatcard--plate { left: -6px; transform-origin: left bottom; }
+  .floatcard--bio { right: -6px; transform-origin: right top; }
   /* Region/billing controls breathe a little on very small screens. */
   .pricing__region { line-height: 1.9; }
 }
@@ -536,7 +549,7 @@ section[id], #top { scroll-margin-top: 78px; }
 .store-badges__link:hover { transform: translateY(-2px); opacity: .9; }
 
 .coming-soon span {
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .coming-soon img {
@@ -557,3 +570,19 @@ section[id], #top { scroll-margin-top: 78px; }
     height: 30px;
   }
 }
+/* ─── Large-text resilience ──────────────────────────────── */
+/* Visitors with a large phone font size saw text spill out of cards (e.g. the
+   "Chicken · Quinoa · Greens" chip) and the page scroll sideways: Android
+   Chrome scales text with the OS font setting, but px-sized boxes don't grow.
+   Let grid/flex children shrink below their content width, and let long words
+   wrap instead of overflowing. */
+body { overflow-wrap: break-word; }
+h1, h2, h3, h4 { hyphens: auto; -webkit-hyphens: auto; }
+.hero__inner > *, .problem__grid > *, .feature > *, .bento > *, .science-grid > *,
+.steps > *, .quotes > *, .pricing > *, .statsbar__inner > *, .footer__inner > *,
+.footer__cols > *, .label-tiles > *, .floatcard > div, .app-row > *, .hero__proof > * { min-width: 0; }
+.floatcard, .appcard, .lt, .price, .stat, .seg__btn, .plan-row, .bubble { overflow-wrap: anywhere; }
+.seg { flex-wrap: wrap; justify-content: center; max-width: 100%; }
+/* Keep the featured plan name clear of the absolutely-positioned tag. */
+.price--featured .price__name { padding-right: 120px; }
+.price__amt { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 2px; }
