@@ -239,14 +239,13 @@
   <script src="/script.js?v=20260704"></script>
   <script>
     // ── Seller application form ────────────────────────────────
-    // Inserts into Supabase `seller_leads` (app repo: migration 0010), which
-    // accepts anonymous inserts only — nobody but HeaVit admins can read it.
-    // The anon key is the same public key the app ships with; row-level
-    // security is what protects the data. If the insert fails (e.g. the
-    // migration hasn't been run), it falls back to a pre-filled email.
+    // Posts to HeaVit's proxy, which rate-limits by IP and writes with a
+    // server-side key. The page holds no database credentials at all.
+    // The row lands in Supabase `seller_leads`, readable only by HeaVit
+    // admins. If the endpoint is unreachable, it falls back to a pre-filled
+    // email so an application is never silently lost.
     (function () {
-      var SUPABASE_URL  = 'https://ngpftqwilmhbwoimifca.supabase.co';
-      var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ncGZ0cXdpbG1oYndvaW1pZmNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMDEyMTUsImV4cCI6MjA4OTY3NzIxNX0.7ifT7oUCy0nGEyAlNn60GjQc-sy_kXLbqjY76Qf7glM';
+      var LEAD_ENDPOINT = 'https://nutriq-proxy.vercel.app/api/seller-lead';
       var SUPPORT = 'support@heavit.com';
 
       var form = document.getElementById('sellForm');
@@ -268,10 +267,9 @@
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        if (val('sCompanyUrl')) { say('✓ Thanks — we’ll be in touch.', true); return; }   // bot
-
         var fssai = form.querySelector('input[name="fssai"]:checked');
         var lead = {
+          company_url: val('sCompanyUrl'),   // honeypot — the server drops anything that fills it
           business_name: val('sBusiness'), contact_name: val('sName') || null,
           email: val('sEmail'), phone: val('sPhone') || null, website: val('sWebsite') || null,
           category: val('sCategory') || null, sku_count: val('sSkus') || null,
@@ -280,12 +278,10 @@
         if (lead.business_name.length < 2) { say('Please enter your brand or business name.', false); return; }
         if (!/.+@.+\..+/.test(lead.email)) { say('Please enter a valid email address.', false); return; }
 
-        if (SUPABASE_ANON.indexOf('__') === 0) { emailFallback(lead); return; }
-
         btn.disabled = true; btn.textContent = 'Sending…'; say('', true);
-        fetch(SUPABASE_URL + '/rest/v1/seller_leads', {
+        fetch(LEAD_ENDPOINT, {
           method: 'POST',
-          headers: { apikey: SUPABASE_ANON, Authorization: 'Bearer ' + SUPABASE_ANON, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(lead),
         }).then(function (res) {
           if (!res.ok) throw new Error('failed');
