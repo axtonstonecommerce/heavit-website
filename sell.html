@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.className = 'js';</script>
+  <title>Sell on HeaVit · For health &amp; supplement brands</title>
+  <meta name="description" content="Apply to sell your health supplements on HeaVit — a nutrition app where products sit next to the research they relate to." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://heavit-website.vercel.app/sell" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=20260910-2" />
+  <style>
+    .sell-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-sm); margin-bottom: 24px; }
+    .sell-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; margin-top: 24px; }
+    .sell-grid .sell-card { margin-bottom: 0; }
+    .sell-form { margin-top: 8px; }
+    .sell-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 0 16px; }
+    .sell-label { display: block; font-size: 13px; font-weight: 700; color: var(--ink); margin: 14px 0 6px; }
+    .sell-input {
+      width: 100%; font-family: inherit; font-size: 15px; color: var(--ink);
+      background: var(--bg); border: 1.5px solid var(--line); border-radius: var(--radius-sm);
+      padding: 12px 14px; transition: border-color .2s;
+    }
+    .sell-input:focus { outline: none; border-color: var(--primary); }
+    textarea.sell-input { resize: vertical; min-height: 96px; }
+    .sell-radios { display: flex; flex-wrap: wrap; gap: 16px; font-size: 15px; color: var(--ink); }
+    .sell-radios label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+    .sell-radios input { accent-color: var(--primary); }
+    .sell-hp { position: absolute; left: -9999px; }
+    .sell-feedback { margin-top: 14px; font-size: 14px; font-weight: 600; min-height: 20px; }
+    .sell-feedback--ok { color: var(--ok); }
+    .sell-feedback--err { color: var(--bad); }
+  </style>
+</head>
+<body>
+
+  <!-- ───────────────────────── NAV ───────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/#top" class="brand" aria-label="HeaVit home">
+        <img src="/heavit-logo.png" alt="HeaVit Logo" class="brand__logo">
+        <span class="brand__name">HeaVit</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#why">Why HeaVit</a>
+        <a href="#requirements">Requirements</a>
+        <a href="#apply">Apply</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#apply" class="btn btn--primary btn--sm">Apply to sell</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a href="#why">Why HeaVit</a>
+      <a href="#requirements">Requirements</a>
+      <a href="#apply">Apply to sell</a>
+      <a href="/">HeaVit for customers</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container container--narrow reveal">
+        <span class="eyebrow">For brands</span>
+        <h1 class="h2">Sell on HeaVit</h1>
+        <p class="lead">
+          HeaVit is a nutrition app for people who track what they eat and read what they buy.
+          In the HeaVit Shop, products sit next to the research they relate to — so good products
+          are found by the people most likely to value them.
+        </p>
+        <div style="height:20px"></div>
+        <a href="#apply" class="btn btn--lime">Apply to sell →</a>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="why">
+      <div class="container container--narrow reveal">
+        <span class="eyebrow">Why HeaVit</span>
+        <h2 class="h2">A shop built around evidence, not ads.</h2>
+        <div class="sell-grid">
+          <div class="sell-card">
+            <h3 class="h3" style="margin-bottom:8px;">Next to the research</h3>
+            <p class="muted" style="margin:0;">Every week HeaVit Weekly explains new health studies. Where a study relates to a category, relevant products are shown with it. Links are editorial and can’t be bought.</p>
+          </div>
+          <div class="sell-card">
+            <h3 class="h3" style="margin-bottom:8px;">HeaVit Lab Tested</h3>
+            <p class="muted" style="margin:0;">Products checked by an independent lab against their label earn a badge on every listing — a clear signal for shoppers who care about quality.</p>
+          </div>
+          <div class="sell-card">
+            <h3 class="h3" style="margin-bottom:8px;">Shoppers with context</h3>
+            <p class="muted" style="margin:0;">HeaVit users log meals, set goals and read ingredient labels in the app. They arrive at your product already knowing what they’re looking for.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="requirements">
+      <div class="container container--narrow reveal">
+        <span class="eyebrow">Before you apply</span>
+        <h2 class="h2">What we need from sellers</h2>
+        <div class="sell-card" style="margin-top:24px;">
+          <ul class="ticks" style="margin-top:0;">
+            <li>A valid FSSAI licence covering the products you sell</li>
+            <li>GST registration and a registered business address</li>
+            <li>Labels that meet FSSAI labelling rules, with full ingredient lists</li>
+            <li>No claims that a product cures, treats or prevents a disease</li>
+            <li>A customer-support contact shown on every listing</li>
+            <li>Willingness to have products independently lab tested</li>
+          </ul>
+          <p style="margin-top:16px; color:var(--muted); font-size:15px;">
+            Every product is reviewed by HeaVit before it goes live. Commercial terms are shared
+            with approved brands during onboarding.
+          </p>
+        </div>
+
+        <div class="steps" style="margin-top:32px;">
+          <div class="step"><span class="step__n">1</span><h4>Apply</h4><p>Tell us about your brand below.</p></div>
+          <div class="step"><span class="step__n">2</span><h4>Review</h4><p>We check your licences and product labels.</p></div>
+          <div class="step"><span class="step__n">3</span><h4>List</h4><p>We set up your listings with you.</p></div>
+          <div class="step"><span class="step__n">4</span><h4>Go live</h4><p>Your products appear in the HeaVit Shop.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="apply">
+      <div class="container container--narrow reveal">
+        <span class="eyebrow">Apply</span>
+        <h2 class="h2">Tell us about your brand</h2>
+        <div class="sell-card" style="margin-top:24px;">
+          <form id="sellForm" class="sell-form" novalidate>
+            <div class="sell-row">
+              <div>
+                <label class="sell-label" for="sBusiness">Brand or business name *</label>
+                <input class="sell-input" id="sBusiness" required maxlength="120" autocomplete="organization" />
+              </div>
+              <div>
+                <label class="sell-label" for="sName">Your name</label>
+                <input class="sell-input" id="sName" maxlength="120" autocomplete="name" />
+              </div>
+            </div>
+            <div class="sell-row">
+              <div>
+                <label class="sell-label" for="sEmail">Work email *</label>
+                <input class="sell-input" type="email" id="sEmail" required maxlength="200" autocomplete="email" placeholder="you@brand.com" />
+              </div>
+              <div>
+                <label class="sell-label" for="sPhone">Phone</label>
+                <input class="sell-input" type="tel" id="sPhone" maxlength="30" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="sell-row">
+              <div>
+                <label class="sell-label" for="sCategory">Main category</label>
+                <select class="sell-input" id="sCategory">
+                  <option value="">Choose one</option>
+                  <option>Protein</option><option>Vitamins</option><option>Omega-3</option>
+                  <option>Ayurveda</option><option>Superfoods</option><option>Fitness</option><option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="sell-label" for="sSkus">Number of products</label>
+                <select class="sell-input" id="sSkus">
+                  <option value="">Choose one</option>
+                  <option>1–5</option><option>6–20</option><option>21–50</option><option>50+</option>
+                </select>
+              </div>
+            </div>
+            <label class="sell-label" for="sWebsite">Website or marketplace store link</label>
+            <input class="sell-input" type="url" id="sWebsite" maxlength="300" placeholder="https://" />
+
+            <span class="sell-label">Do you have an FSSAI licence?</span>
+            <div class="sell-radios">
+              <label><input type="radio" name="fssai" value="yes" /> Yes</label>
+              <label><input type="radio" name="fssai" value="no" /> Not yet</label>
+            </div>
+
+            <label class="sell-label" for="sMessage">Anything else?</label>
+            <textarea class="sell-input" id="sMessage" maxlength="2000" placeholder="Your products, certifications, lab reports…"></textarea>
+
+            <!-- Spam trap: people never see or fill this -->
+            <input class="sell-hp" id="sCompanyUrl" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <button type="submit" class="btn btn--lime" id="sellBtn" style="margin-top:18px;">Send application</button>
+            <p class="sell-feedback" id="sellFeedback" aria-live="polite"></p>
+          </form>
+        </div>
+        <p style="color:var(--muted); font-size:15px;">
+          Questions? Email <a href="mailto:support@heavit.com?subject=Selling%20on%20HeaVit" style="color:var(--primary); font-weight:700; text-decoration:underline;">support@heavit.com</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ───────────────────────── FOOTER ───────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/#top" class="brand brand--light">
+          <img src="/heavit-logo.png" alt="HeaVit Logo" class="brand__logo">
+          <span class="brand__name">HeaVit</span>
+        </a>
+        <p>AI nutrition intelligence, calibrated to your body, whether South Asian or Western.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h5>Product</h5>
+          <a href="/#features">Features</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#how">How it works</a>
+        </div>
+        <div class="footer__col">
+          <h5>Company</h5>
+          <a href="/#science">Science</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/sell">Sell on HeaVit</a>
+        </div>
+        <div class="footer__col">
+          <h5>Legal</h5>
+          <a href="https://fringe-throne-1dc.notion.site/HeaVit-Privacy-Policy-34108883437c80d69330d50a7eaeea49" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://fringe-throne-1dc.notion.site/HeaVit-Terms-of-Service-34108883437c80ae8698f58ddd672418" target="_blank" rel="noopener">Terms of Service</a>
+          <a href="/delete-account">Delete Account</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> HeaVit. All rights reserved.</p>
+      <p class="footer__disc">HeaVit provides general nutritional information and is not a substitute for professional medical advice, diagnosis or treatment.</p>
+    </div>
+  </footer>
+
+  <script src="/script.js?v=20260704"></script>
+  <script>
+    // ── Seller application form ────────────────────────────────
+    // Inserts into Supabase `seller_leads` (app repo: migration 0010), which
+    // accepts anonymous inserts only — nobody but HeaVit admins can read it.
+    // The anon key is the same public key the app ships with; row-level
+    // security is what protects the data. If the insert fails (e.g. the
+    // migration hasn't been run), it falls back to a pre-filled email.
+    (function () {
+      var SUPABASE_URL  = 'https://ngpftqwilmhbwoimifca.supabase.co';
+      var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ncGZ0cXdpbG1oYndvaW1pZmNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMDEyMTUsImV4cCI6MjA4OTY3NzIxNX0.7ifT7oUCy0nGEyAlNn60GjQc-sy_kXLbqjY76Qf7glM';
+      var SUPPORT = 'support@heavit.com';
+
+      var form = document.getElementById('sellForm');
+      if (!form) return;
+      var btn = document.getElementById('sellBtn');
+      var feedback = document.getElementById('sellFeedback');
+      var val = function (id) { return (document.getElementById(id).value || '').trim(); };
+
+      function say(msg, ok) {
+        feedback.textContent = msg;
+        feedback.className = 'sell-feedback ' + (ok ? 'sell-feedback--ok' : 'sell-feedback--err');
+      }
+
+      function emailFallback(lead) {
+        var body = Object.keys(lead).map(function (k) { return k + ': ' + (lead[k] == null ? '' : lead[k]); }).join('\n');
+        window.location.href = 'mailto:' + SUPPORT + '?subject=' + encodeURIComponent('Sell on HeaVit: ' + lead.business_name) + '&body=' + encodeURIComponent(body);
+        say('Opening your email app to send the application to ' + SUPPORT + '…', true);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (val('sCompanyUrl')) { say('✓ Thanks — we’ll be in touch.', true); return; }   // bot
+
+        var fssai = form.querySelector('input[name="fssai"]:checked');
+        var lead = {
+          business_name: val('sBusiness'), contact_name: val('sName') || null,
+          email: val('sEmail'), phone: val('sPhone') || null, website: val('sWebsite') || null,
+          category: val('sCategory') || null, sku_count: val('sSkus') || null,
+          has_fssai: fssai ? fssai.value === 'yes' : null, message: val('sMessage') || null,
+        };
+        if (lead.business_name.length < 2) { say('Please enter your brand or business name.', false); return; }
+        if (!/.+@.+\..+/.test(lead.email)) { say('Please enter a valid email address.', false); return; }
+
+        if (SUPABASE_ANON.indexOf('__') === 0) { emailFallback(lead); return; }
+
+        btn.disabled = true; btn.textContent = 'Sending…'; say('', true);
+        fetch(SUPABASE_URL + '/rest/v1/seller_leads', {
+          method: 'POST',
+          headers: { apikey: SUPABASE_ANON, Authorization: 'Bearer ' + SUPABASE_ANON, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+          body: JSON.stringify(lead),
+        }).then(function (res) {
+          if (!res.ok) throw new Error('failed');
+          form.reset();
+          say('✓ Application received. We review every brand and will email you about next steps.', true);
+        }).catch(function () {
+          emailFallback(lead);
+        }).finally(function () {
+          btn.disabled = false; btn.textContent = 'Send application';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
