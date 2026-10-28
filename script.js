@@ -50,18 +50,21 @@
     const proCard      = document.querySelector('[data-plan="pro"]');
     if (!billingSeg || !basicCard || !proCard) return;
 
+    // India gets a quarterly option alongside annual; everywhere else is
+    // annual only. The quarterly price is set so paying annually is
+    // visibly the better deal — 46% cheaper on Basic, 48% on Pro.
     const PRICING = {
       IN: {
-        cur: '₹', allowMonthly: true,
-        annual:  { basic: '1,499', pro: '2,499' },
-        monthly: { basic: '299',   pro: '499'   },
+        cur: '₹', allowQuarterly: true,
+        annual:    { basic: '1,499', pro: '2,499' },
+        quarterly: { basic: '699',   pro: '1,199' },
         label: 'Showing ₹ pricing for India.',
         switchTo: 'View international ($) pricing',
         other: 'INTL',
       },
       INTL: {
-        cur: '$', allowMonthly: false,
-        annual:  { basic: '29.99', pro: '49.99' },
+        cur: '$', allowQuarterly: false,
+        annual:    { basic: '29.99', pro: '49.99' },
         label: 'Showing $ pricing for your region.',
         switchTo: 'View ₹ India pricing',
         other: 'IN',
@@ -81,14 +84,14 @@
 
     function render() {
       const p = PRICING[region];
-      const effective = p.allowMonthly ? billing : 'annual';
+      const effective = p.allowQuarterly ? billing : 'annual';
       const amts = p[effective];
-      const per  = effective === 'annual' ? '/year' : '/month';
-      const note = effective === 'annual' ? 'Billed annually' : 'Billed monthly';
+      const per  = effective === 'annual' ? '/year' : '/3 months';
+      const note = effective === 'annual' ? 'Billed annually' : 'Billed every 3 months';
       setAmt(basicCard, p.cur + amts.basic, per, note);
       setAmt(proCard,   p.cur + amts.pro,   per, note);
 
-      billingSeg.classList.toggle('is-hidden', !p.allowMonthly);
+      billingSeg.classList.toggle('is-hidden', !p.allowQuarterly);
       billingSeg.querySelectorAll('.seg__btn').forEach((b) =>
         b.classList.toggle('is-active', b.dataset.billing === effective));
 

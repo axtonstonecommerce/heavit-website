@@ -586,3 +586,8 @@ h1, h2, h3, h4 { hyphens: auto; -webkit-hyphens: auto; }
 /* Keep the featured plan name clear of the absolutely-positioned tag. */
 .price--featured .price__name { padding-right: 120px; }
 .price__amt { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 2px; }
+
+
+/* Support address sits on its own row above the copyright line. */
+.footer__support { width: 100%; font-size: 12.5px; margin-bottom: 6px; }
+.footer__support a { text-decoration: underline; }
