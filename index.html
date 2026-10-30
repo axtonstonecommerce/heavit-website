@@ -88,9 +88,11 @@
           <a href="#how" class="btn btn--ghost-light">See how it works</a>
         </div>
       <div class="coming-soon">
-    <span>Coming Soon on</span>
-    <img src="images/app-store-badge.svg" alt="Apple App Store">
-    <img src="images/google-play.png" alt="Google Play">
+    <span>Now on Google Play &middot; iOS coming soon</span>
+    <a href="https://play.google.com/store/apps/details?id=com.heavit.app" class="coming-soon__link" target="_blank" rel="noopener" aria-label="Get HeaVit on Google Play">
+      <img src="images/google-play.png" alt="Get it on Google Play">
+    </a>
+    <img src="images/app-store-badge.svg" alt="Coming soon to the App Store" class="coming-soon__pending">
 </div>
         <div class="hero__proof">
           <div><strong>5</strong><span>AI-powered tools</span></div>
@@ -601,8 +603,8 @@
           <p>Vegetarian, eggetarian, vegan, Jain, non-vegetarian and pescatarian, all strictly respected in every meal plan and suggestion.</p>
         </details>
         <details class="faq__item">
-          <summary>When can I get it?</summary>
-          <p>HeaVit launches soon on iOS and Android. Head to the App Store or Google Play to download it the moment it goes live.</p>
+          <summary>Where can I get it?</summary>
+          <p>HeaVit is live on Google Play &mdash; install it on Android today. The iOS version is coming soon to the App Store.</p>
         </details>
       </div>
     </div>
@@ -612,22 +614,24 @@
   <section class="section cta" id="get">
     <div class="container cta__inner reveal">
       <span class="dot dot--lime"></span>
-      <h2 class="cta__title">Your body's nutrition coach<br />is almost here.</h2>
-      <p class="cta__sub">HeaVit launches soon on iOS &amp; Android. Clinical-grade nutrition AI, calibrated to your body, wherever you eat.</p>
+      <h2 class="cta__title">Your body's nutrition coach<br />is here.</h2>
+      <p class="cta__sub">HeaVit is live on Android today. Clinical-grade nutrition AI, calibrated to your body, wherever you eat.</p>
       <!--
-        STORE LINKS: once the listings are live, wrap each <img> below in
-        <a href="…store URL…" class="store-badges__link" target="_blank" rel="noopener">
-        to make the badges clickable.
+        STORE LINKS: the Google Play badge is live. When the iOS listing is
+        approved, wrap the App Store <img> in the same store-badges__link
+        anchor and drop the store-badge-slot--pending class from its slot.
       -->
-      <div class="store-badges store-badges--soon" role="img" aria-label="Coming soon to the App Store and Google Play">
+      <div class="store-badges">
         <span class="store-badge-slot">
+          <a href="https://play.google.com/store/apps/details?id=com.heavit.app" class="store-badges__link" target="_blank" rel="noopener" aria-label="Get HeaVit on Google Play">
+            <img src="images/google-play.png" alt="Get it on Google Play" style="height:44px;width:auto;" />
+          </a>
+        </span>
+        <span class="store-badge-slot store-badge-slot--pending">
           <img src="images/app-store-badge.svg" alt="Coming soon to the App Store" style="height:44px;width:auto;" />
         </span>
-        <span class="store-badge-slot">
-          <img src="images/google-play.png" alt="Coming soon to Google Play" style="height:44px;width:auto;" />
-        </span>
       </div>
-      <p class="cta__fine">Launching soon on the App Store &amp; Google Play. HeaVit is not a substitute for medical advice.</p>
+      <p class="cta__fine">Now on Google Play &middot; coming soon to the App Store. HeaVit is not a substitute for medical advice.</p>
     </div>
   </section>
 

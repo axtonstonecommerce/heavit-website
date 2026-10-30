@@ -541,7 +541,15 @@ section[id], #top { scroll-margin-top: 78px; }
   width: 152px;
 }
 .store-badges img { height: 44px; width: auto; }
-.store-badges--soon img { opacity: .85; }
+/* The store whose listing is not approved yet reads as muted, so the live
+   badge beside it is clearly the one to click. */
+.store-badge-slot--pending img { opacity: .5; }
+.coming-soon__link {
+  display: inline-flex;
+  transition: transform .2s var(--ease), opacity .2s;
+}
+.coming-soon__link:hover { transform: translateY(-2px); opacity: .9; }
+.coming-soon__pending { opacity: .5; }
 .store-badges__link {
   display: inline-flex;
   transition: transform .2s var(--ease), opacity .2s;
