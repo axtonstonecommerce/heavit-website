@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.className = 'js';</script>
+  <title>Privacy Policy · HeaVit</title>
+  <meta name="description" content="What HeaVit collects, who processes it, how your health data and AI requests are handled, and how to delete everything." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://heavit.com/privacy" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=20261030" />
+  <style>
+    /* A policy is a long read, so it gets a little more air than the
+       marketing pages and a table that survives a phone screen. */
+    .pol h2 { font-size: 20px; font-weight: 800; color: var(--ink); margin: 38px 0 10px; }
+    .pol h3 { font-size: 15px; font-weight: 800; color: var(--ink); margin: 22px 0 6px; }
+    .pol p, .pol li { font-size: 15px; line-height: 1.7; color: var(--muted); }
+    .pol ul { margin: 10px 0 10px 20px; }
+    .pol li { margin-bottom: 7px; }
+    .pol strong { color: var(--ink); font-weight: 700; }
+    .pol__meta { font-size: 13px; color: var(--muted); margin-top: 6px; }
+    .pol__tablewrap { overflow-x: auto; margin: 14px 0 6px; -webkit-overflow-scrolling: touch; }
+    .pol__table { width: 100%; border-collapse: collapse; min-width: 560px; font-size: 14px; }
+    .pol__table th, .pol__table td {
+      text-align: left; vertical-align: top; padding: 11px 12px;
+      border-bottom: 1px solid var(--line); color: var(--muted); line-height: 1.55;
+    }
+    .pol__table th { color: var(--ink); font-weight: 700; font-size: 13px; }
+    .pol__table td:first-child { color: var(--ink); font-weight: 600; white-space: nowrap; }
+    .pol__note {
+      background: var(--bg); border: 1.5px solid var(--line); border-radius: var(--radius-sm);
+      padding: 14px 16px; margin: 18px 0;
+    }
+    .pol__note p { margin: 0; font-size: 14px; }
+    .pol__toc { margin: 18px 0 0; padding: 0; list-style: none; }
+    .pol__toc li { margin-bottom: 5px; }
+    .pol__toc a { font-size: 14px; font-weight: 600; color: var(--primary); text-decoration: none; }
+    .pol__toc a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- ───────────────────────── NAV ───────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/#top" class="brand" aria-label="HeaVit home">
+        <img src="/heavit-logo.png" alt="HeaVit Logo" class="brand__logo">
+        <span class="brand__name">HeaVit</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="/#get" class="btn btn--primary btn--sm">Get the app</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#get">Get the app</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container container--narrow reveal pol">
+
+        <span class="eyebrow">Legal</span>
+        <h1 class="h2">Privacy Policy</h1>
+        <p class="pol__meta">Last updated 8 November 2026 · Effective 8 November 2026</p>
+
+        <p class="lead" style="margin-top:18px;">
+          HeaVit handles health information, so this policy is written to be read rather
+          than skimmed past. It says plainly what we collect, who else sees it, and what
+          we do not do with it. We do not sell your personal data, and we do not share it
+          for advertising.
+        </p>
+
+        <ul class="pol__toc">
+          <li><a href="#who">Who we are</a></li>
+          <li><a href="#collect">What we collect</a></li>
+          <li><a href="#processors">Who processes your data</a></li>
+          <li><a href="#ai">AI processing</a></li>
+          <li><a href="#health">Your health data</a></li>
+          <li><a href="#payments">Subscriptions and payments</a></li>
+          <li><a href="#retention">How long we keep it</a></li>
+          <li><a href="#rights">Your rights</a></li>
+          <li><a href="#delete">Deleting your account</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#changes">Changes and contact</a></li>
+        </ul>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="who">Who we are</h2>
+        <p>
+          HeaVit is operated by <strong>Axtonstone Commerce Private Limited</strong>,
+          17/30 Sainik Ngr NH9 Main, Rothak Rd, Old Barahi Mor, Bahadurgarh, Jhajjar,
+          Haryana 124507, India. We are the data controller (or, under India's Digital
+          Personal Data Protection Act 2023, the data fiduciary) for the information
+          described here.
+        </p>
+        <p>
+          For anything in this policy, write to
+          <a href="mailto:support@heavit.com">support@heavit.com</a>.
+        </p>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="collect">What we collect</h2>
+
+        <h3>Information you give us</h3>
+        <ul>
+          <li><strong>Account</strong> — your email address, and your name if you provide one.</li>
+          <li><strong>Profile</strong> — age, sex, height, weight, activity level, dietary
+            preference, goals and any health conditions you choose to enter.</li>
+          <li><strong>What you log</strong> — meals, portions, measurements, streaks, recipes you save.</li>
+          <li><strong>Blood reports</strong> — a report you upload for analysis, and the values
+            and explanation produced from it.</li>
+          <li><strong>Photographs</strong> — plate photos and nutrition labels you choose to scan,
+            and any photo you attach to a recipe.</li>
+          <li><strong>Messages</strong> — what you write to HeaVit AI.</li>
+        </ul>
+
+        <h3>Information collected automatically</h3>
+        <ul>
+          <li><strong>Technical data</strong> — the IP address and request details that reach our
+            API when the app calls it, used to run the service and prevent abuse.</li>
+          <li><strong>Subscription status</strong> — which plan you hold and when it renews.</li>
+        </ul>
+
+        <div class="pol__note">
+          <p>
+            <strong>We do not use analytics or advertising software.</strong> HeaVit contains no
+            third-party tracking SDK, no advertising identifier, and no cross-app tracking.
+            We do not build advertising profiles and we do not sell data to anyone.
+          </p>
+        </div>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="processors">Who processes your data</h2>
+        <p>
+          We use the service providers below. Each receives only what is listed, and only to
+          provide the service to us.
+        </p>
+
+        <div class="pol__tablewrap">
+          <table class="pol__table">
+            <thead>
+              <tr><th>Provider</th><th>Where</th><th>What it receives</th><th>Why</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Anthropic</td><td>United States</td>
+                <td>The text of your AI chat messages, the profile and meal details relevant to a
+                    request, and the contents of a blood report you choose to analyse</td>
+                <td>Generating chat replies, meal plans, blood-report explanations and
+                    food-label analysis</td>
+              </tr>
+              <tr>
+                <td>Google (Gemini)</td><td>United States</td>
+                <td>Food and nutrition-label photographs you choose to scan, and the text of the
+                    related request</td>
+                <td>Reading nutrition labels and recognising food</td>
+              </tr>
+              <tr>
+                <td>Supabase</td><td style="color:#b00;font-weight:700;">[CONFIRM REGION]</td>
+                <td>Your account, profile, logged meals, blood-report results and subscription status</td>
+                <td>Storing your account and your data</td>
+              </tr>
+              <tr>
+                <td>RevenueCat</td><td>United States</td>
+                <td>A pseudonymous account identifier and the purchase receipt your app store issues</td>
+                <td>Confirming which subscription you hold</td>
+              </tr>
+              <tr>
+                <td>Apple / Google Play</td><td>Per their own terms</td>
+                <td>Your payment details, handled entirely by the store</td>
+                <td>Taking payment. <strong>We never receive or store your card details.</strong></td>
+              </tr>
+              <tr>
+                <td>Vercel</td><td>United States</td>
+                <td>The network request to our API, including its IP address</td>
+                <td>Hosting our API</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Processing happens in the United States for the providers marked above. We rely on
+          each provider's standard contractual clauses for transfers outside your country.
+        </p>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="ai">AI processing</h2>
+        <p>
+          HeaVit's guidance is generated by third-party AI models — Claude, from Anthropic,
+          and Gemini, from Google. When you use an AI feature, the content of that request
+          travels through our own server to the relevant provider so the model can answer it.
+        </p>
+        <ul>
+          <li><strong>Your requests are not used to train Anthropic's models.</strong>
+            Anthropic does not train on inputs or outputs sent through its API.</li>
+          <li><strong>Providers retain a request only briefly</strong>, for abuse monitoring,
+            and then delete it.</li>
+          <li><strong>Photographs are not stored by us.</strong> A plate photo or nutrition label
+            you scan is sent for analysis and is not saved to our servers or our database. Only
+            the result is kept, against your account.</li>
+          <li><strong>A blood report you upload</strong> is analysed the same way. The extracted
+            values and the explanation are stored against your account so you can see them
+            again; you can delete them from the app at any time.</li>
+        </ul>
+
+        <div class="pol__note">
+          <p>
+            <strong>An AI model can be wrong.</strong> HeaVit provides general nutritional
+            information and wellness guidance only. It is not a substitute for professional
+            medical advice, diagnosis or treatment. Always consult a qualified healthcare
+            professional before making decisions about your health, diet, medication or
+            treatment. HeaVit does not diagnose, treat, cure or prevent any disease.
+          </p>
+        </div>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="health">Your health data</h2>
+        <p>
+          The health information you give HeaVit — your meals, measurements, goals,
+          blood-report values and conditions — is used to personalise your guidance and for
+          nothing else. It is not used for advertising, not sold, and not shared with anyone
+          outside the table above.
+        </p>
+
+        <h3>Family health history</h3>
+        <p>
+          Family history is stored <strong>only on your device</strong>. We never save it to our
+          servers or our database. When you use a feature that takes it into account — AI chat
+          or a meal plan — a summary of the relevant risks is included in that single request
+          to the AI provider, under the same terms as everything else in this section, and is
+          not retained afterwards. If you delete the app, your family history goes with it.
+        </p>
+
+        <h3>Recipe photographs</h3>
+        <p>
+          A photograph you attach to a recipe you create is stored so it can be shown with that
+          recipe, and is accessible to anyone who has its link. Please do not attach anything
+          to a recipe that you would not want seen. This does not apply to plate photos or
+          nutrition labels you scan, which are never stored.
+        </p>
+
+        <h3>Security</h3>
+        <p>
+          Your data is encrypted in transit and at rest. Access is restricted at the database
+          level so one account cannot read another's, and the records that decide what your
+          subscription unlocks can only be written by our server, never by an app.
+        </p>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="payments">Subscriptions and payments</h2>
+        <p>
+          Payment is taken by Apple or by Google Play, under their own terms and privacy
+          policies. <strong>We never see your card number, bank details or billing address.</strong>
+        </p>
+        <p>
+          To know which subscription you hold we use RevenueCat. When you sign in we give
+          RevenueCat a pseudonymous identifier for your account — not your name and not your
+          email address — and it validates your store receipt and tells our server which tier
+          you are entitled to. <strong>RevenueCat receives no health data of any kind.</strong>
+        </p>
+        <p>
+          We store, against your account: your tier, the product you bought, when it expires
+          and whether it is active. We keep that record after a subscription ends, so your
+          purchase history stays accurate and an existing account is never wrongly locked out.
+        </p>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="retention">How long we keep it</h2>
+        <ul>
+          <li><strong>Account and health data</strong> — until you delete your account.</li>
+          <li><strong>Photographs sent for analysis</strong> — not retained by us at all.</li>
+          <li><strong>Family history</strong> — on your device only, for as long as the app is installed.</li>
+          <li><strong>Purchase records</strong> — kept after a subscription ends, and for as long
+            as tax and accounting law requires.</li>
+        </ul>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="rights">Your rights</h2>
+        <p>
+          Depending on where you live, you may have the right to access your data, correct it,
+          delete it, object to or restrict how it is used, receive a copy in a portable format,
+          and complain to a data protection authority. Under India's DPDP Act 2023 you may also
+          nominate someone to exercise these rights on your behalf.
+        </p>
+        <p>
+          Most of this you can do in the app directly. For anything else, email
+          <a href="mailto:support@heavit.com">support@heavit.com</a> and we will respond within
+          30 days. We do not charge for this and we will not ask you to justify the request.
+        </p>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="delete">Deleting your account</h2>
+        <p>
+          You can delete your account and the data associated with it from inside the app, or
+          at <a href="/delete-account">heavit.com/delete-account</a>. Deletion is permanent and
+          cannot be undone. Records we are legally required to keep — a purchase record, for
+          instance — are retained for the period the law requires and nothing more.
+        </p>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="children">Children</h2>
+        <p>
+          HeaVit is not intended for children under 13, or under 18 in jurisdictions that
+          require parental consent for processing a child's data. We do not knowingly collect
+          data from them. If you believe a child has given us data, email
+          <a href="mailto:support@heavit.com">support@heavit.com</a> and we will delete it.
+        </p>
+
+        <!-- ─────────────────────────────────────────────── -->
+        <h2 id="changes">Changes and contact</h2>
+        <p>
+          We will update this policy when our processing changes, and will post the new
+          effective date at the top. Material changes will be announced in the app before they
+          take effect.
+        </p>
+        <p>
+          <strong>Axtonstone Commerce Private Limited</strong><br />
+          17/30 Sainik Ngr NH9 Main, Rothak Rd, Old Barahi Mor, Bahadurgarh, Jhajjar,
+          Haryana 124507, India<br />
+          <a href="mailto:support@heavit.com">support@heavit.com</a>
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ───────────────────────── FOOTER ───────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/#top" class="brand brand--light">
+          <img src="/heavit-logo.png" alt="HeaVit Logo" class="brand__logo">
+          <span class="brand__name">HeaVit</span>
+        </a>
+        <p>AI nutrition intelligence, calibrated to your body, whether South Asian or Western.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h5>Product</h5>
+          <a href="/#features">Features</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#how">How it works</a>
+        </div>
+        <div class="footer__col">
+          <h5>Company</h5>
+          <a href="/#science">Science</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/#get">Get the app</a>
+          <a href="/sell">Sell on HeaVit</a>
+        </div>
+        <div class="footer__col">
+          <h5>Legal</h5>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="https://fringe-throne-1dc.notion.site/HeaVit-Terms-of-Service-34108883437c80ae8698f58ddd672418" target="_blank" rel="noopener">Terms of Service</a>
+          <a href="/delete-account">Delete Account</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> HeaVit. All rights reserved.</p>
+      <p class="footer__disc">HeaVit provides general nutritional information and is not a substitute for professional medical advice, diagnosis or treatment.</p>
+    </div>
+  </footer>
+
+  <script src="/script.js?v=20261030"></script>
+</body>
+</html>
